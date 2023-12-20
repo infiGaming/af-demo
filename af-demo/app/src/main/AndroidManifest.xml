@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ygy.bet">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- read Build.SERIAL may need   -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- appflyer   -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <!--   -->
+    <uses-permission android:name="android.permission.READ_CLIPBOARD" />
+
+    <queries>
+        <!--        <package android:name="com.huawei.browser" />-->
+        <!--        <package android:name="com.android.chrome" /> -->
+        <!--        <package android:name="org.mozilla.firefox" /> -->
+        <!--        <package android:name="com.microsoft.emmx"  />-->
+        <!--        <package android:name="com.opera.mini.native"  />-->
+        <!--        <package android:name="com.opera.browser"  />-->
+        <!--        <package android:name="com.UCMobile.intl"  />-->
+        <!--        <package android:name="com.sec.android.app.sbrowser" />-->
+        <!--        <package android:name="com.brave.browser" />-->
+        <!--        <package android:name="com.cloudmosa.puffinFree"  />-->
+        <!--        <package android:name="mobi.mgeek.TunnyBrowser" /> -->
+        <!--        <package android:name="com.mx.browser"  />-->
+        <!--        <package android:name="com.tencent.mtt"  />-->
+        <!--        <package android:name="com.ksmobile.cb"  />-->
+        <!--        <package android:name="com.apusapps.browser"  />-->
+        <!--        <package android:name="com.transsion.phoenix"  />-->
+        <!--        <package android:name="com.yandex.browser"  />-->
+        <!--        <package android:name="mark.via.gp"  />-->
+        <!--        <package android:name="com.alohamobile.browser" /> -->
+        <!--        <package android:name="com.kiwibrowser.browser" /> -->
+        <!--        <package android:name="com.baidu.browser.inter"  />-->
+        <!--        <package android:name="com.ghostery.android.ghostery"  />-->
+
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        tools:replace="android:fullBackupContent"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:launchMode="singleTop"
+        tools:targetApi="31">
+        <activity
+            android:name="com.qz.youquwebapk.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- <meta-data android:name="AF_PRE_INSTALL_NAME" android:value="tt"/> -->
+
+    </application>
+
+</manifest>
